@@ -1,14 +1,17 @@
-function addFunction(num1, num2, showResult, message) {
-    var result = num1 + num2;
-    if (showResult) {
-        console.log(message + result);
-    }
-    else {
-        console.log("Show result iis false");
-    }
+//Objects and array in type script
+// enum Access {ADMIN = 123, MODERATOR = 456, USER = 111}
+var Access;
+(function (Access) {
+    Access[Access["ADMIN"] = 0] = "ADMIN";
+    Access[Access["MODERATOR"] = 1] = "MODERATOR";
+    Access[Access["USER"] = 2] = "USER";
+})(Access || (Access = {}));
+var student = {
+    name: 'John',
+    age: 22,
+    interest: ["Coding", "Watching"],
+    access: Access.ADMIN
+};
+if (student.access === 0) {
+    console.log('Hello Admin!');
 }
-var number1 = 5;
-var number2 = 4.5;
-var showResult = true;
-var message = 'Sum is: ';
-addFunction(number1, number2, showResult, message);

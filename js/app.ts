@@ -1,16 +1,19 @@
-function addFunction(num1 : number, num2 : number, showResult : boolean, message : string){
-    const result = num1 + num2;
+//Objects and array in type script
+// enum Access {ADMIN = 123, MODERATOR = 456, USER = 111}
+enum Access {ADMIN, MODERATOR, USER}
 
-    if(showResult){
-        console.log(message + result);
-    }else{
-        console.log("Show result iis false");
-    }
+const student: {
+    name : string;
+    age : number;
+    gender? : string;
+    interest : string[];
+    access : Access
+} = {
+    name : 'John',
+    age : 22,
+    interest : ["Coding", "Watching"],
+    access: Access.ADMIN
 }
-
-const number1 = 5;
-const number2 = 4.5;
-const showResult = true;
-const message = 'Sum is: ';
-
-addFunction(number1, number2, showResult, message);
+if(student.access === 0){
+    console.log('Hello Admin!')
+}
