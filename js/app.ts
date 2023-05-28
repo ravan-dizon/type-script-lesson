@@ -1,11 +1,16 @@
-const InputNum1 = document.querySelector("#input1") as HTMLInputElement;
-const InputNum2 = document.querySelector("#input2") as HTMLInputElement;
-const SubmitBtn = document.querySelector("#btn1");
+function addFunction(num1 : number, num2 : number, showResult : boolean, message : string){
+    const result = num1 + num2;
 
-function addNumbers(num1 : number, num2 : number){
-    return num1 + num2
+    if(showResult){
+        console.log(message + result);
+    }else{
+        console.log("Show result iis false");
+    }
 }
-SubmitBtn?.addEventListener("click", ()=>{
-   console.log(`The sum is ${addNumbers(+InputNum1.value, +InputNum2.value)}`);
-})
 
+const number1 = 5;
+const number2 = 4.5;
+const showResult = true;
+const message = 'Sum is: ';
+
+addFunction(number1, number2, showResult, message);
