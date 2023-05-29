@@ -1,17 +1,15 @@
-//Objects and array in type script
-// enum Access {ADMIN = 123, MODERATOR = 456, USER = 111}
-var Access;
-(function (Access) {
-    Access[Access["ADMIN"] = 0] = "ADMIN";
-    Access[Access["MODERATOR"] = 1] = "MODERATOR";
-    Access[Access["USER"] = 2] = "USER";
-})(Access || (Access = {}));
-var student = {
-    name: 'John',
-    age: 22,
-    interest: ["Coding", "Watching"],
-    access: Access.ADMIN
-};
-if (student.access === 0) {
-    console.log('Hello Admin!');
+// function addOrCombine(data1 : number | string, data2 : number | string){ //Union type
+function addOrCombine(data1, data2) {
+    var result;
+    if (typeof data1 === 'number' && typeof data2 === 'number') {
+        result = data1 + data2;
+    }
+    else {
+        result = data1.toString() + data2.toString();
+    }
+    return result;
 }
+var combineNum = addOrCombine(13, 20);
+console.log(combineNum);
+var combineString = addOrCombine("Ravan ", "Coder");
+console.log(combineString);

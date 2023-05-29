@@ -1,19 +1,20 @@
-//Objects and array in type script
-// enum Access {ADMIN = 123, MODERATOR = 456, USER = 111}
-enum Access {ADMIN, MODERATOR, USER}
+// => CUSTOM TYPE
+type RavanCoder = number | string;
 
-const student: {
-    name : string;
-    age : number;
-    gender? : string;
-    interest : string[];
-    access : Access
-} = {
-    name : 'John',
-    age : 22,
-    interest : ["Coding", "Watching"],
-    access: Access.ADMIN
+
+// function addOrCombine(data1 : number | string, data2 : number | string){ //Union type
+function addOrCombine(data1 : RavanCoder, data2 : RavanCoder){ 
+    let result : number | string;
+    if(typeof data1 === 'number' && typeof data2 === 'number'){
+        result = data1 + data2;
+    }else{
+        result = data1.toString() + data2.toString();
+    }
+    return result;
 }
-if(student.access === 0){
-    console.log('Hello Admin!')
-}
+
+const combineNum = addOrCombine(13, 20);
+console.log(combineNum);
+
+const combineString = addOrCombine("Ravan ", "Coder");
+console.log(combineString);
