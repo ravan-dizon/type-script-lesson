@@ -1,16 +1,15 @@
-var userData; //unknown is similar to any
-var trueData;
-userData = "Programmer";
-userData = 2013;
-// trueData = userData;
-if (typeof userData === "string") {
-    trueData = userData;
-}
-function generateErrorCode(description, errorCode) {
-    throw { message: description, code: errorCode };
-}
-function infiniteLoop() {
-    while (true) { }
-}
-generateErrorCode("Error hapened", 402);
-infiniteLoop();
+var Vehicle = /** @class */ (function () {
+    function Vehicle(model) {
+        this.modelTypes = model;
+    }
+    return Vehicle;
+}());
+var model_type = {
+    type: 'Car',
+    color: 'Blue',
+    event: function () {
+        console.log('Event Function');
+    },
+};
+var car = new Vehicle(model_type);
+console.log(car);

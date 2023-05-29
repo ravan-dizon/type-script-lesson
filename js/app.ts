@@ -1,21 +1,26 @@
-let userData : unknown;//unknown is similar to any
-let trueData : string;
 
-userData = "Programmer";
-userData = 2013;
-
-// trueData = userData;
-
-if(typeof userData === "string"){
-    trueData = userData;
+interface ModelType{
+    type  : string,
+    color : string,
+    event : ()=> void;
 }
 
-function generateErrorCode(description : string, errorCode : number) : never{
-    throw{message : description, code : errorCode}
-}
-function infiniteLoop() :never{
-    while(true){}
-}
+class Vehicle{
+    // type : string;
+    // color: string;
+    modelTypes : ModelType;
 
-generateErrorCode("Error hapened", 402);
-infiniteLoop();
+    constructor(model : ModelType){
+        this.modelTypes = model;
+  
+    }
+}
+const model_type = {
+    type : 'Car',
+    color : 'Blue',
+    event : () => {
+        console.log('Event Function')
+    },
+}
+const car = new Vehicle (model_type);
+console.log(car);
