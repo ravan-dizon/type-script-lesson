@@ -1,15 +1,13 @@
-// function addOrCombine(data1 : number | string, data2 : number | string){ //Union type
-function addOrCombine(data1, data2) {
-    var result;
-    if (typeof data1 === 'number' && typeof data2 === 'number') {
-        result = data1 + data2;
-    }
-    else {
-        result = data1.toString() + data2.toString();
-    }
-    return result;
+function sum(num1, num2) {
+    return num1 + num2;
 }
-var combineNum = addOrCombine(13, 20);
-console.log(combineNum);
-var combineString = addOrCombine("Ravan ", "Coder");
-console.log(combineString);
+function getResult(num) {
+    var resultString = "Result : $ {num}";
+    return resultString;
+}
+var addOrGetResult;
+var GetResultFunction;
+addOrGetResult = sum(13, 20);
+console.log(addOrGetResult);
+GetResultFunction = getResult;
+console.log(GetResultFunction);
