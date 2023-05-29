@@ -1,16 +1,21 @@
-function sum(num1 : number, num2 : number){
-    return num1 + num2;
+let userData : unknown;//unknown is similar to any
+let trueData : string;
+
+userData = "Programmer";
+userData = 2013;
+
+// trueData = userData;
+
+if(typeof userData === "string"){
+    trueData = userData;
 }
 
-function getResult(num : number) : string{
-    let resultString = `Result : $ {num}`;
-    return resultString;
+function generateErrorCode(description : string, errorCode : number) : never{
+    throw{message : description, code : errorCode}
+}
+function infiniteLoop() :never{
+    while(true){}
 }
 
-let addOrGetResult: (num1 : number, num2 : number) => number;
-let GetResultFunction: (num : number) => string;
-
-addOrGetResult = sum(13, 20);
-console.log(addOrGetResult);
-GetResultFunction = getResult;
-console.log(GetResultFunction);
+generateErrorCode("Error hapened", 402);
+infiniteLoop();

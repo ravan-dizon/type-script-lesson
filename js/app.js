@@ -1,13 +1,16 @@
-function sum(num1, num2) {
-    return num1 + num2;
+var userData; //unknown is similar to any
+var trueData;
+userData = "Programmer";
+userData = 2013;
+// trueData = userData;
+if (typeof userData === "string") {
+    trueData = userData;
 }
-function getResult(num) {
-    var resultString = "Result : $ {num}";
-    return resultString;
+function generateErrorCode(description, errorCode) {
+    throw { message: description, code: errorCode };
 }
-var addOrGetResult;
-var GetResultFunction;
-addOrGetResult = sum(13, 20);
-console.log(addOrGetResult);
-GetResultFunction = getResult;
-console.log(GetResultFunction);
+function infiniteLoop() {
+    while (true) { }
+}
+generateErrorCode("Error hapened", 402);
+infiniteLoop();
